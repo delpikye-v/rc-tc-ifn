@@ -6,13 +6,14 @@
 ---
 
 #### Description
+Advertising [rc-tc-ifn](https://www.npmjs.com/package/rc-tc-ifn) (for search)
 
-+ You want to display beauty list data. But some data is oversized and dashed, you need to clip and show only tooltips for them, and you don't know when to show tooltips.
-=> This lib supports you if it suits your requirements.
++ You want to display beauty list data. But some data is oversized and break line, you need to clip and show tooltips for them. Using this.
 
-+ Truncate string with ellipsis (Show tooltip if need)
++ Truncate text with ellipsis and show tooltip. (<b>if need</b>)
 
-+ You should see live demo
++ It suitable for dropdown list or table list data. (make width better)
+
 
 ---
 ### Usage
@@ -25,7 +26,7 @@ npm install --save rc-tc-ifn
 
 Import the module in the place you want to use:
 ```js
-import TruncateTooltip from "rc-tc-ifn";
+import TooltipIfNeed from "rc-tc-ifn";
 
 import "rc-tc-ifn/build/styles.css";
 
@@ -36,29 +37,25 @@ import "rc-tc-ifn/build/styles.css";
 ```js
 // const [content, setContent] = useState('This is simple tooltip')
 
-// 1
-<TruncateTooltip width="100px" right>
-    abcdefghiklmonpf100px...fjslkfjlksdjflksjfdlksjflksjfklsjflksjdlf
-</TruncateTooltip>
-// => truncate and display tooltip  (display on screen:  `abcdefghiklmonpf100px...` )
+// 1. truncate and display tooltip (ex: width > 100px)
+<TooltipIfNeed width="100px" right>
+    todosomethingxxxlatexxxx
+</TooltipIfNeed>
+// display: todosomethingxxx
+// tooltip: todosomethingxxxlatexxxx   // or pass props tooltipContent
 
-// 2
-<TruncateTooltip width="100px" right>
-    abcdefghiklmonpf1
-</TruncateTooltip>
-// => no truncate and no tooltip
+// 2. no truncate and no tooltip (width <= 100px)
+<TooltipIfNeed width="100px" right>
+    todo work
+</TooltipIfNeed>
 
-/*
-it will auto truncate, display text with ... and show tooltip
-(You should see live demo)
-*/
+/* it suitable for dropdown list or table list data */
 
 ```
 
 <br />
 
 ---
-
 
 #### props
 
@@ -76,10 +73,8 @@ see all props in [react-tooltip-z](https://www.npmjs.com/package/react-tooltip-z
 | tagTruncate          | String                        | Tag child name (default `span`)                                            |
 | width                | `px`, `%`                     | Set width with for child. Default `no`. (You should set width)             |
 
-<br />
-
-#### Note
-more `react-tooltip-z`
+#### note
++ you should add className and set width from className.
 
 <br />
 

@@ -1,7 +1,7 @@
 {
   "name": "rc-tc-ifn",
-  "version": "1.0.0-beta",
-  "description": "Truncate text, show tooltip if need (Hooks)",
+  "version": "1.0.1",
+  "description": "React. Truncate text and show tooltip if need (Hooks)",
   "main": "build/index.js",
   "module": "build/index.js",
   "browser": "build/index.js",
@@ -85,6 +85,6 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react-tooltip-z": "^1.1.0-dz"
+    "react-tooltip-z": "^1.1.2"
   }
 }
