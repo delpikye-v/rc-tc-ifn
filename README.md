@@ -1,18 +1,20 @@
 <div align="center">
     <h1>rc-tc-ifn</h1>
-    <b><a href="https://codesandbox.io/s/rc-tc-ifn-nblgi">LIVE EXAMPLE</a></b>
+    <b><a href="https://codesandbox.io/s/nblgi">LIVE EXAMPLE</a></b>
 </div>
 
 ---
 
 #### Description
-Advertising [rc-tc-ifn](https://www.npmjs.com/package/rc-tc-ifn) (for search)
+Change [rc-tc-ifn](https://www.npmjs.com/package/rc-tc-ifn)
 
 + You want to display beauty list data. But some data is oversized and break line, you need to clip and show tooltips for them. Using this.
 
 + Truncate text with ellipsis and show tooltip. (<b>if need</b>)
 
 + It suitable for dropdown list or table list data. (make width better)
+
++ v>= 2.0 (Fix and update better)
 
 
 ---
@@ -21,14 +23,14 @@ Advertising [rc-tc-ifn](https://www.npmjs.com/package/rc-tc-ifn) (for search)
 Install the package
 
 ```js
-npm install --save rc-tc-ifn
+npm install react-truncate-tooltip-ifz
 ```
 
 Import the module in the place you want to use:
 ```js
-import TooltipIfNeed from "rc-tc-ifn";
+import TooltipIfNeed from "react-truncate-tooltip-ifz";
 
-import "rc-tc-ifn/build/styles.css";
+import "react-truncate-tooltip-ifz/dist/styles.css";
 
 ```
 
@@ -43,14 +45,15 @@ import "rc-tc-ifn/build/styles.css";
 </TooltipIfNeed>
 // display: todosomethingxxx
 // tooltip: todosomethingxxxlatexxxx   // or pass props tooltipContent
+```
 
+```js
 // 2. no truncate and no tooltip (width <= 100px)
 <TooltipIfNeed width="100px" right>
     todo work
 </TooltipIfNeed>
 
 /* it suitable for dropdown list or table list data */
-
 ```
 
 <br />
@@ -59,28 +62,29 @@ import "rc-tc-ifn/build/styles.css";
 
 #### props
 
-see all props in [react-tooltip-z](https://www.npmjs.com/package/react-tooltip-z)
+see all props in [react-tooltip-z](https://www.npmjs.com/package/react-tooltip-z) or file d.ts
 
-+ note props
++ note
 
 ```js
-`trigger` and `showSync`: now only supports hover so it's disabled.
+`trigger` and `showSync`: now only supports hover so it is disabled.
 ```
 
 | props                | type                          | description                                                                |
 |----------------------|-------------------------------|----------------------------------------------------------------------------|
 | tagName              | String                        | Tag wrap & fix size (default `span`)                                       |
 | tagTruncate          | String                        | Tag child name (default `span`)                                            |
-| width                | `px`, `%`                     | Set width with for child. Default `no`. (You should set width)             |
+| truncateClassName    | String                        | Tag truncate className                                                     |
+| width                | `px`, `%`                     | Set width with for child. Default `no`.                                    |
 
 #### note
-+ you should add className and set width from className.
+`you should add className and set width from className`.
 
 <br />
 
 #### RUN
 
-<b><a href="https://codesandbox.io/s/rc-tc-ifn-nblgi">LIVE EXAMPLE</a></b>
+<b><a href="https://codesandbox.io/s/nblgi">LIVE EXAMPLE</a></b>
 
 <br />
 
