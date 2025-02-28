@@ -1,6 +1,6 @@
 {
   "name": "rc-tc-ifn",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "React simple. Truncate text and tooltip if need (Hooks)",
   "author": "Delpi.Kye",
   "license": "MIT",
@@ -84,6 +84,6 @@
   },
   "dependencies": {
     "joinclass": "^1.0.0",
-    "react-tooltip-z": "^2.1.0"
+    "react-tooltip-z": "^2.2.0"
   }
 }
