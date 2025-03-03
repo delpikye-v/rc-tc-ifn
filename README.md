@@ -5,6 +5,12 @@
 
 ---
 
+[![NPM](https://img.shields.io/npm/v/rc-tc-ifn.svg)](https://www.npmjs.com/package/rc-tc-ifn)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![Downloads](https://img.shields.io/npm/dt/rc-tc-ifn.svg)
+
+---
+
 #### Description
 Change [rc-tc-ifn](https://www.npmjs.com/package/rc-tc-ifn)
 
@@ -23,14 +29,14 @@ Change [rc-tc-ifn](https://www.npmjs.com/package/rc-tc-ifn)
 Install the package
 
 ```js
-npm install react-truncate-tooltip-ifz
+npm install rc-tc-ifn
 ```
 
 Import the module in the place you want to use:
 ```js
-import TooltipIfNeed from "react-truncate-tooltip-ifz";
+import TooltipIfNeed from "rc-tc-ifn";
 
-import "react-truncate-tooltip-ifz/dist/styles.css";
+import "rc-tc-ifn/dist/styles.css";
 
 ```
 
