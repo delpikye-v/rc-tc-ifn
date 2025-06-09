@@ -1,5 +1,6 @@
 <div align="center">
     <h1>rc-tc-ifn</h1>
+    <br />
     <b><a href="https://codesandbox.io/s/nblgi">LIVE EXAMPLE</a></b>
 </div>
 
@@ -7,7 +8,7 @@
 
 [![NPM](https://img.shields.io/npm/v/rc-tc-ifn.svg)](https://www.npmjs.com/package/rc-tc-ifn)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-![Downloads](https://img.shields.io/npm/dt/rc-tc-ifn.svg)
+![Downloads](https://img.shields.io/npm/dt/react-tooltip.svg)
 
 ---
 
@@ -22,6 +23,7 @@ Change [rc-tc-ifn](https://www.npmjs.com/package/rc-tc-ifn)
 
 + v>= 2.0 (Fix and update better)
 
++ inject css to js (remove import css)
 
 ---
 ### Usage
@@ -34,9 +36,7 @@ npm install rc-tc-ifn
 
 Import the module in the place you want to use:
 ```js
-import TooltipIfNeed from "rc-tc-ifn";
-
-import "rc-tc-ifn/dist/styles.css";
+import TooltipIfn from "rc-tc-ifn";
 
 ```
 
@@ -46,18 +46,18 @@ import "rc-tc-ifn/dist/styles.css";
 // const [content, setContent] = useState('This is simple tooltip')
 
 // 1. truncate and display tooltip (ex: width > 100px)
-<TooltipIfNeed width="100px" right>
+<TooltipIfn width="100px" right>
     todosomethingxxxlatexxxx
-</TooltipIfNeed>
+</TooltipIfn>
 // display: todosomethingxxx
 // tooltip: todosomethingxxxlatexxxx   // or pass props tooltipContent
 ```
 
 ```js
 // 2. no truncate and no tooltip (width <= 100px)
-<TooltipIfNeed width="100px" right>
+<TooltipIfn width="100px" right>
     todo work
-</TooltipIfNeed>
+</TooltipIfn>
 
 /* it suitable for dropdown list or table list data */
 ```

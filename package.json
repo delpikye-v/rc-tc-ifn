@@ -1,6 +1,6 @@
 {
   "name": "rc-tc-ifn",
-  "version": "2.3.0",
+  "version": "2.6.0",
   "description": "React simple. Truncate text and tooltip if need (Hooks)",
   "author": "Delpi.Kye",
   "license": "MIT",
@@ -18,14 +18,13 @@
     "watch": "npx tsc --watch",
     "build-publish": "rimraf ./dist && npm run build && npm publish",
     "prepare": "husky install",
-    "postversion": "git push --follow-tags",
-    "download_schema": "apollo client:download-schema --endpoint=xxx schema/schema.json"
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/delpikye-v/react-truncate-tooltip-if-need.git"
+    "url": "https://github.com/delpikye-v/rc-tc-ifn.git"
   },
-  "homepage": "https://github.com/delpikye-v/react-truncate-tooltip-if-need#readme",
+  "homepage": "https://github.com/delpikye-v/rc-tc-ifn#readme",
   "keywords": [
     "react",
     "react-component",
@@ -38,10 +37,10 @@
     "truncate-string",
     "ellipsis-tooltip",
     "tooltip",
-    "react-truncate-tooltip-if-need"
+    "rc-tc-ifn"
   ],
   "bugs": {
-    "url": "https://github.com/delpikye-v/react-tooltip/issues"
+    "url": "https://github.com/delpikye-v/rc-tc-ifn/issues"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -73,7 +72,6 @@
     "rollup": "^2.56.3",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "tslib": "^2.3.0",
@@ -84,6 +82,6 @@
   },
   "dependencies": {
     "joinclass": "^1.0.0",
-    "react-tooltip-z": "^2.2.1"
+    "react-tooltip-z": "^2.6.0"
   }
 }

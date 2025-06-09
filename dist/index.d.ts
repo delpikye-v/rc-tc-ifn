@@ -1,4 +1,3 @@
-import "./tooltip-truncate/styles.css";
-import TruncateTooltip, { IFTooltipTruncateProps } from "./tooltip-truncate";
-export { TruncateTooltip, IFTooltipTruncateProps };
-export default TruncateTooltip;
+import TooltipIfn, { IFTooltipIfnProps } from "./tooltip-truncate";
+export { TooltipIfn, IFTooltipIfnProps };
+export default TooltipIfn;
