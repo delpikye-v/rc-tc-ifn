@@ -1,99 +1,129 @@
-<div align="center">
-    <h1>rc-tc-ifn</h1>
-    <br />
-    <b><a href="https://codesandbox.io/s/nblgi">LIVE EXAMPLE</a></b>
-</div>
+# 💬 rc-tc-ifn
+
+[![NPM](https://img.shields.io/npm/v/rc-tc-ifn.svg)](https://www.npmjs.com/package/rc-tc-ifn) ![Downloads](https://img.shields.io/npm/dt/rc-tc-ifn.svg)
+
+<a href="https://codesandbox.io/p/sandbox/zz7pzp" target="_blank">LIVE EXAMPLE</a>
 
 ---
 
-[![NPM](https://img.shields.io/npm/v/rc-tc-ifn.svg)](https://www.npmjs.com/package/rc-tc-ifn)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-![Downloads](https://img.shields.io/npm/dt/react-tooltip.svg)
+Smart truncate + tooltip component for React 18+.   
+Built on top of `react-tooltip-z`.
+
+> Automatically truncates text with ellipsis **only when needed** and
+> shows tooltip when content overflows.
 
 ---
 
-#### Description
-Change [rc-tc-ifn](https://www.npmjs.com/package/rc-tc-ifn)
+## Why rc-tc-ifn?
 
-+ You want to display beauty list data. But some data is oversized and break line, you need to clip and show tooltips for them. Using this.
+-   ✂️ Auto truncate with `text-overflow: ellipsis`
+-   🧠 Tooltip shows **only if content overflows**
+-   🎯 Zero manual overflow checking
+-   📦 Lightweight wrapper
+-   🪟 Portal-based tooltip (via react-tooltip-z)
+-   🎨 Fully customizable tooltip props
+-   ⚡ React 18+ ready
 
-+ Truncate text with ellipsis and show tooltip. (<b>if need</b>)
+Perfect for:
 
-+ It suitable for dropdown list or table list data. (make width better)
-
-+ v>= 2.0 (Fix and update better)
-
-+ inject css to js (remove import css)
+-   Table cells
+-   Dropdown lists
+-   Select menus
+-   Data grids
+-   Compact UI layouts
 
 ---
-### Usage
 
-Install the package
+## Installation
 
-```js
+``` bash
 npm install rc-tc-ifn
 ```
 
-Import the module in the place you want to use:
-```js
+---
+
+## Basic Usage
+
+``` tsx
 import TooltipIfn from "rc-tc-ifn";
 
+export function Example() {
+  return (
+    <TooltipIfn width={120} placement="right">
+      Very long content here that might overflow
+    </TooltipIfn>
+  );
+}
 ```
 
-#### Snippet
-
-```js
-// const [content, setContent] = useState('This is simple tooltip')
-
-// 1. truncate and display tooltip (ex: width > 100px)
-<TooltipIfn width="100px" right>
-    todosomethingxxxlatexxxx
-</TooltipIfn>
-// display: todosomethingxxx
-// tooltip: todosomethingxxxlatexxxx   // or pass props tooltipContent
-```
-
-```js
-// 2. no truncate and no tooltip (width <= 100px)
-<TooltipIfn width="100px" right>
-    todo work
-</TooltipIfn>
-
-/* it suitable for dropdown list or table list data */
-```
-
-<br />
+If the content exceeds 120px → it will truncate and show tooltip.\
+If not → it renders normally (no tooltip).
 
 ---
 
-#### props
+## Custom Content
 
-see all props in [react-tooltip-z](https://www.npmjs.com/package/react-tooltip-z) or file d.ts
-
-+ note
-
-```js
-`trigger` and `showSync`: now only supports hover so it is disabled.
+``` tsx
+<TooltipIfn
+  width="150px"
+  content="Custom tooltip content"
+  placement="top"
+>
+  Long text here...
+</TooltipIfn>
 ```
 
-| props                | type                          | description                                                                |
-|----------------------|-------------------------------|----------------------------------------------------------------------------|
-| tagName              | String                        | Tag wrap & fix size (default `span`)                                       |
-| tagTruncate          | String                        | Tag child name (default `span`)                                            |
-| truncateClassName    | String                        | Tag truncate className                                                     |
-| width                | `px`, `%`                     | Set width with for child. Default `no`.                                    |
+---
 
-#### note
-`you should add className and set width from className`.
+## Props
+
+All tooltip-related props are inherited from **react-tooltip-z**\
+(except `trigger` and `open`, which are internally controlled).
+
+| Prop                | Type                     | Default   | Description                               |
+|---------------------|--------------------------|-----------|-------------------------------------------|
+| `children`          | `ReactNode`              | —         | Target element                             |
+| `content`           | `string \| ReactNode`    | `children`| Tooltip content                            |
+| `width`             | `string \| number`       | —         | Width applied to truncated child           |
+| `wrapperWidth`      | `string \| number`       | —         | Width applied to wrapper                   |
+| `tagName`           | `string`                 | `"span"`  | Wrapper tag                                |
+| `truncateClassName` | `string`                 | —         | Custom class for truncated element         |
+| `...rest`           | `any`                    | —         | Forwarded to `react-tooltip-z` props       |
+
+---
+
+## Behavior Notes
+
+-   Tooltip only appears when content overflows.
+-   No CSS import required (CSS injected via JS).
+-   `trigger` and `open` props are disabled (hover-only behavior).
+-   Child element must accept `ref` (DOM or forwardRef component).
+
+---
+
+## Comparison
+
+| Criteria               | rc-tc-ifn | Manual Implementation  |
+| ---------------------- | :-------: | :--------------------: |
+| Smart overflow check   |     ✅     |           ❌           |
+| Tooltip only if needed |     ✅     |           ❌           |
+| Portal support         |     ✅     |           ⚠️           |
+| API simplicity         |     ✅     |           ❌           |
+| Setup time             |     ✅     |           ❌           |
 
 <br />
 
-#### RUN
+<b>Notes</b>
 
-<b><a href="https://codesandbox.io/s/nblgi">LIVE EXAMPLE</a></b>
+- ✅ Built-in overflow detection — no extra logic required
+- ✅ Tooltip renders only when necessary — avoids unnecessary DOM updates
+- ✅ Portal support included — better layering & positioning
+- ⚠️ Manual approach may support portal, but requires custom setup
+- ❌ Manual implementation requires repetitive boilerplate and edge-case handling
 
-<br />
+---
 
-### License
+## License
 
 MIT
+

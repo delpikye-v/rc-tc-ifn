@@ -1,87 +1,79 @@
 {
   "name": "rc-tc-ifn",
-  "version": "2.6.0",
-  "description": "React simple. Truncate text and tooltip if need (Hooks)",
+  "version": "3.0.0",
+  "description": "React component that truncates text with ellipsis and shows tooltip only when content overflows.",
   "author": "Delpi.Kye",
   "license": "MIT",
-  "source": "src/index.js",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "type": "module",
+  "main": "./build/index.cjs.js",
+  "module": "./build/index.esm.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.esm.js",
+      "require": "./build/index.cjs.js"
+    }
+  },
   "files": [
-    "dist"
+    "build"
   ],
-  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
-    "clean": "rimraf ./dist",
-    "rb": "rollup -c",
-    "build": "rimraf ./dist && rollup -c",
-    "watch": "npx tsc --watch",
-    "build-publish": "rimraf ./dist && npm run build && npm publish",
-    "prepare": "husky install",
-    "postversion": "git push --follow-tags"
+    "clean": "rimraf build",
+    "build": "rimraf build && rollup -c",
+    "watch": "rollup -c -w",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/delpikye-v/rc-tc-ifn.git"
   },
   "homepage": "https://github.com/delpikye-v/rc-tc-ifn#readme",
-  "keywords": [
-    "react",
-    "react-component",
-    "react-truncate",
-    "react-truncate-tooltip",
-    "react-ellipsis-tooltip",
-    "react-tooltip",
-    "tooltip-if-need",
-    "truncate",
-    "truncate-string",
-    "ellipsis-tooltip",
-    "tooltip",
-    "rc-tc-ifn"
-  ],
   "bugs": {
     "url": "https://github.com/delpikye-v/rc-tc-ifn/issues"
   },
+  "keywords": [
+    "react",
+    "react-component",
+    "react-ellipsis",
+    "react-truncate",
+    "react-tooltip",
+    "overflow-tooltip",
+    "ellipsis-tooltip",
+    "truncate-with-tooltip",
+    "ui",
+    "frontend"
+  ],
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
-    "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-node-resolve": "^11.2.1",
-    "@types/node": "^13.9.0",
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
-    "@types/styled-components": "^5.1.25",
-    "@typescript-eslint/eslint-plugin": "^3.9.1",
-    "@typescript-eslint/parser": "^3.9.1",
-    "babel-loader": "^8.2.2",
-    "babel-plugin-import": "^1.13.5",
-    "babel-preset-react-app": "^10.0.0",
-    "husky": "^6.0.0",
-    "jest": "^27.5.1",
-    "prettier": "^2.3.2",
-    "pretty-quick": "^3.1.1",
-    "react": "17.0.2",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.56.3",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.29.0",
-    "tslib": "^2.3.0",
-    "tslint": "^6.1.3",
-    "tslint-etc": "^1.13.10",
-    "typedoc": "^0.16.11",
-    "typescript": "^4.4.2"
+    "react": ">=18",
+    "react-dom": ">=18",
+    "react-tooltip-z": ">=3.0.1"
   },
   "dependencies": {
-    "joinclass": "^1.0.0",
-    "react-tooltip-z": "^2.6.0"
+    "joinclass": "^1.1.0",
+    "rsx-z": "^1.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^3.29.4",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.0.0"
+  },
+
+  "publishConfig": {
+    "access": "public"
   }
 }
